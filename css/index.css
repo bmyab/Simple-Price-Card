@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,500;0,700;1,400&display=swap');
+:root{
+  --Cyan: hsl(179, 62%, 43%);
+  --Bright-Yellow: hsl(71, 73%, 54%);
+  --Light-Gray: hsl(204, 43%, 93%);
+  --Grayish-Blue: hsl(218, 22%, 67%);
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; 
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Karla', sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--Light-Gray);
+}
+.main{
+  max-width: 35rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8rem;
+  background-color: white;
+  overflow: hidden;
+}
+.container{
+  padding-inline: 2rem;
+  padding-block: 2.5rem;
+}
+.info{
+  color: var(--Grayish-Blue);
+}
+.info .title{
+  font-size: 2rem;
+}
+.info .subtitle{
+  color: var(--Bright-Yellow);
+  padding-block: 2rem;
+}
+.info .text{
+  font-weight: 300;
+  line-height: 2.8rem;
+}
+.subscription{
+  color: white;
+  background-color: var(--Cyan);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.subscription .title{
+  font-weight: 500;
+  font-size: 2rem;
+}
+.subscription .texts{
+  display: flex;
+  align-items: center;
+  gap:2rem;
+}
+.subscription .texts span{
+  font-size: 4rem;
+}
+.subscription .texts p{
+  color: #ddd;
+  font-weight: 500;
+}
+.subscription .cta{
+  margin-block-start: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.8rem;
+  background-color: var(--Bright-Yellow);
+  color: inherit;
+}
+.subscription .cta:hover{
+  opacity: 0.8;
+}
+.why{
+  color: white;
+  --Cyan: rgb(32, 199, 196);
+  background-color: var(--Cyan);
+}
+.why .title{
+  font-size: 2rem;
+  padding-block-end: 2rem;
+}
+.why .opcs__why{
+  font-weight: 300;
+  color: var(--Light-Gray);
+}
+.why .opcs__why .opc__why{
+  list-style: none;
+  cursor: pointer;
+  padding-block-end: 0.4rem;
+}
+.why .opcs__why .opc__why:hover{
+  text-decoration: underline;
+  color: #ddd;
+}
+
+@media screen and (min-width:920px) {
+  .main{
+    max-width: 82rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas:
+    "principal principal"
+    "subs      why";
+  }
+  .container{
+    padding-inline: 4.5rem;
+  }
+  .info{
+    padding-block-start: 6.5rem;
+    grid-area: principal;
+    padding-block-end: 0;
+  }
+  .info .text{
+    width: 80%;
+    font-size: 1.8rem;
+  }
+  .subscription{
+    grid-area: subs;
+    padding-block: 4rem;
+    padding-inline: 6rem;
+  }
+  .why{
+    grid-area: why;
+  }
+}
